@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Calculator
@@ -6,7 +5,6 @@ public class Calculator
 	public static void main(String[] arg)
 	{
 		String shape = arg[0];
-		Scanner sc = new Scanner (System.in);
 		if(shape.equals("square"))
 		{
 			int s = Integer.parseInt(arg[1]);
