@@ -1,0 +1,4 @@
+it can also be ussed for wrting to files without high level nodes
+hello world
+web design
+  appended word
