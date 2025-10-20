@@ -24,8 +24,8 @@ public class Serialized {
             FileOutputStream fos = new FileOutputStream("test.txt");
             ObjectOutputStream os = new ObjectOutputStream(fos);
             System.out.println("saved!");
-        os.writeObject(s);
-        os.close();
+            os.writeObject(s);
+            os.close();
         }catch(Exception e){
             System.out.println(e);
         }

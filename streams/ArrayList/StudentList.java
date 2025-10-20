@@ -8,7 +8,7 @@ public class StudentList{
         ArrayList<String> students = new ArrayList<>();
         students.add("Ali");
         students.add("abuabkar");
-
+        // 0 base indexing
         System.out.println("All students: " + students);
         System.out.println("std at index1: "+ students.get(1));
 
@@ -17,6 +17,7 @@ public class StudentList{
 
         students.remove(0);
         System.out.println("after remove: "+ students);
+        System.out.println("size: "+students.size());
 
     }
 }

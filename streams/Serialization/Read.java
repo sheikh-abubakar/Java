@@ -1,5 +1,5 @@
 import java.io.*;
-
+// to read multiple objects
 public class Read{
     public static void main(String[] args){
         try{
