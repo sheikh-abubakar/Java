@@ -21,7 +21,7 @@ public class Student implements Externalizable {
         System.out.println("custom write external called");
         out.writeObject(name);
         out.writeInt(age);
-        out.writeDouble(marks);
+        out.writeDouble(marks);//if you skipped it 
     }
 
     // Manual desririal..
@@ -29,7 +29,8 @@ public class Student implements Externalizable {
         System.out.println("custom readexternal..");
         name = (String) in.readObject();
         age = in.readInt();
-        marks = in.readDouble();
+        marks = 0.0;// if skipped in write external the it will treat it as transient
+        marks = in.readDouble();//if you not skiiped it in writeextrenal , it is mandatory
     }
 
     public String toString(){
