@@ -18,6 +18,8 @@ public class EchoClient{
             //read reply
             String reply = in.readLine();
             System.out.println("reply: "+reply);
+            cs.close();
+            in.close();
         }catch(IOException e){
             System.out.println(e);
         }
