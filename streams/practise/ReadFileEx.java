@@ -29,6 +29,8 @@ public class ReadFileEx{
                 System.out.println(line);
                 line = br.readLine();
             }
+             // 3. Creation / Last modified time
+             System.out.println("Last Modified: " + obj.lastModified());
             fr.close();
             br.close();
         }catch (IOException e){

@@ -29,6 +29,7 @@ public class Main{
 
         a.eat();//parent clas function called 
         a.eyes(); // as eyes function is overrided and obj is still of type animal but call child class function
+        System.out.println("-----------------------");
         d.bark();
         d.eyes();
         a2.eat();

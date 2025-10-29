@@ -25,6 +25,8 @@ public class EchoServer{
             try{
                 Socket cs = ss.accept();
                 System.out.println("client cnected to "+ cs.getRemoteSocketAddress());
+                System.out.println("client cnected to "+ cs.getInetAddress());
+                System.out.println("server cnected to "+ cs.getLocalAddress());
                 try{
                     InputStreamReader ip = new InputStreamReader(cs.getInputStream());
                     BufferedReader in = new BufferedReader(ip);
