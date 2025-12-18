@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator button</title>
+</head>
+<body style = "text-align:center; margin-top:80px;">
+    <h2>Calculator - Choose Your Operation</h2>
+    <button onclick = "addNumbers()" style="padding:15px 30px; font-size:20px;"> Addition(+) </button>
+    <button onclick = "subNumbers()" style="padding:15px 30px; font-size:20px;"> Subtraction(-) </button>
+    <button onclick = "mulNumbers()" style="padding:15px 30px; font-size:20px;"> multiplication(*) </button>
+    <button onclick = "divNumbers()" style="padding:15px 30px; font-size:20px;"> division(/) </button>
+
+    <script>
+        function addNumbers(){
+            let a = Number(prompt("enter fisrt num"));
+            let b = Number(prompt("enter sec num"));
+            let r = a + b;
+            alert("res: = " + r);
+        }
+        function subNumbers(){
+            let a = Number(prompt("enter fisrt num"));
+            let b = Number(prompt("enter sec num"));
+            let r = a - b;
+            alert("res: = " + r);
+        }
+         function mulNumbers(){
+            let a = Number(prompt("enter fisrt num"));
+            let b = Number(prompt("enter sec num"));
+            let r = a * b;
+            alert("res: = " + r);
+        }
+         function divNumbers(){
+            let a = Number(prompt("enter fisrt num"));
+            let b = Number(prompt("enter sec num"));
+            if (b === 0){
+                alert("zero not allowed for b");
+            }else{
+              let r = a / b;
+            alert("res: = " + r);  
+            }
+            
+        }
+    </script>
+</body>
+</html>

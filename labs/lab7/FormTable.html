@@ -1,0 +1,70 @@
+<!Doctype html>
+
+<html>
+    <head>
+        <title>User Information Form </title>
+
+    </head>
+    <body>
+    <h2> Table </h2>
+
+    <form>
+        <label>Full name:</label>
+        <input type = "text" name="firstname"><br><br
+        <label>email</label>
+        <input type = "email" name="email" required><br><br>
+
+        <label>Age</label>
+        <input type = "number" name="age" required><br>
+        <label>password</label><br>
+        <input type = "password" name="password" required><br>
+        <label>DOb</label><br>
+        <input type = "date" name="dob">
+        <label>gender</label>
+        <td> <input type = "radio" name="gender" value="male"> male</td>
+                <br>
+                <td> <input type = "radio" name="gender" value="female"> female</td>
+                <br>
+                <td><input type ="radio" name = "gender"  value ="other">other
+                </td>
+                <br>
+        <label>Hobby</label>
+        <td><input type = "checkbox" name = "hobby" value = "reading"> Reading</td>
+                <br>
+                <br>
+                <td><input type = "checkbox" name = "hobby" value = "Sports"> Sports</td>
+                <br>
+                <td><input type = "checkbox" name = "hobby" value = "Music"> Music </td>
+                <br>
+        <label>Country</label>
+        <select name = "country">
+            <option value = "Pakistan">Pakistan</option>
+            <option value = "USA">USA</option>
+            <option value = "ind">India</option>
+        </select>
+        <input type = "submit" value="submit">
+        <input type = "reset" value="reset">
+    </form>
+    <br>
+    <br>
+    <table border="solid">
+        <tr>
+            <th>Name</th>
+            <th>email</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>dob</th>
+            <th>hobbies</th>
+            <th>countries</th>
+        </tr>
+
+        <td>Abubakar</td>
+        <td>example@.com</td>
+        <td>21</td>
+        <td>male</td>
+        <td>22 feb</td>
+        <td>reading</td>
+        <td>pakistan</td>
+        </table>
+    </body>
+</html>

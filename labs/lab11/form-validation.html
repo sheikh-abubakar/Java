@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .ok {color: green;}
+        .err {color: red;}
+    </style>
+</head>
+<body>
+    <h2>Form validation</h2>
+    Full Name: 
+    <input type = "text" id = "name"><span id="nameMsg"></span><br><br>
+    Email:
+    <input type = "text" id="email"><span id = "emailMsg"></span><br><br>
+    Passsword:
+    <input type="password" id="pass"><span id="passMsg"></span><br><br>
+    ConfirmPassword:
+    <input type = "password" id = "cpass"><span id = "cpassMsg"></span><br><br>
+    <button id = "regBtn" disabled> Register</button>
+
+
+    <script>
+        let nameField = document.getElementById("name");
+        let emailField = document.getElementById("email");
+        let passField = document.getElementById("pass");
+        let cpassField = document.getElementById("cpass");
+        let btn = document.getElementById("regBtn");
+        let nameMsg = document.getElementById("nameMsg");
+        let emailMsg = document.getElementById("emailMsg");
+        let passMsg = document.getElementById("passMsg");
+        let cpassMsg = document.getElementById("cpassMsg");
+
+        let validName = false;
+        let validEmail = false;
+        let validPass = false;
+        let validCpass = false;
+
+
+        nameField.addEventListener("input", function(){
+            let v = nameField.value.trim();
+            if(v.length >=3){
+                nameMsg.textContent = "Valid name";
+                nameMsg.clasName = "ok";
+                validName = true;
+            }else{
+                nameMsg.textContent = " Name must be at least 3 characters";
+                nameMsg.className = "error";
+                validName = false;
+            }
+            toggleBtn();
+        })
+
+        emailField.addEventListener("input", function(){
+            let v = emailField.value.trim();
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if(emailPattern.test(v)){
+                emailMsg.textContent = "Valid email";
+                emailMsg.className = "ok";
+                validEmail = true;
+            }else{
+                emailMsg.textContent = "Invalid email format";
+                emailMsg.className = "err";
+                validEmail = false;
+            }
+            toggleBtn();
+        })
+
+        passField.addEventListener("input", function(){
+            let v = passField.value;
+            let hasNum = /\d/.test(v);
+            let hasSp = /[!@#$%^&*]/.test(v);
+            if(v.length >=6 && hasNum && hasSp){
+                passMsg.textContent = "Strong pswrd";
+                passMsg.className = "ok";
+                validPass = true;
+            }else{
+                passMsg.textContent = "Must be 6+ chars, include number & special char";
+                passMsg.className = "err";
+                validPass = false;
+            }
+            checkCpass();
+            toggleBtn();
+        });
+
+        cpassField.addEventListener("input", function(){
+            checkCpass();
+            togglebtn();
+        });
+
+        function checkCpass(){
+            if(cpassField.value = passField.value && validPass){
+                cpassMsg.content = "pswrd mathed";
+                cpassMsg.className = "ok";
+                validPass = true
+            }else{
+                cpassMsg.textContent = " Passwords do not match";
+                cpassMsg.className = "error";
+                validCpass = false;
+            }
+
+        }
+
+        function toggleBtn(){
+            btn.disabled = !(validName && validEmail && validPass && validCpass);
+        }
+
+    </script>
+</body>
+</html>

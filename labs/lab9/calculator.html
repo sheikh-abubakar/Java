@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style = "text-align:center; margin-top:100px">
+    <button onclick = "startCalculator()" style = "padding:20px 40px; font-size:22px;">Open Calculator
+    </button>
+
+    <script>
+        function startCalculator() {
+            let n1 = prompt("plz ener firsts number");
+            let n2 = prompt("plz ener second number");
+            let op = prompt("enter operator(+, -, *, /)");
+
+            n1 = Number(n1);
+            n2 = Number(n2);
+
+            let res;
+
+            if (op === "+"){
+                res = n1+n2;
+                alert("res is: = " + res);
+            }else if(op === "-"){
+                res = n1 - n2;
+                alert("res is: = " +res);
+            }else if(op === "*"){
+                res = n1*n2;
+                alert("res is: = "+ res);
+            }else if (op === "/"){
+                if(n2 === 0){
+                    alert ("div by zer not allowed")
+                }else{res = n1 / n2;
+                alert("res is: = "+ res);
+                }
+            }else{
+                alert("invalid operator")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!-- localStorage allows us to save data in the user's browser permanently 
+localStorage can store only strings, not arrays or objects 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+
+<h2>To-Do List</h2>
+
+<input type="text" id="taskInput">
+<button id="addBtn">Add Task</button>
+
+<ul id="taskList"></ul>
+
+<script>
+let input = document.getElementById("taskInput");
+let addBtn = document.getElementById("addBtn");
+let list = document.getElementById("taskList");
+
+loadTasks();
+
+addBtn.onclick = function(){
+    if(input.value.trim() !== ""){
+        addTask(input.value);
+        saveTasks();
+        input.value = "";
+    }
+};
+
+function addTask(text){
+    let li = document.createElement("li");
+    let chk = document.createElement("input");
+    chk.type = "checkbox";
+
+    let span = document.createElement("span");
+    span.textContent = text;
+
+    chk.onchange = function(){
+        if(chk.checked){
+            span.style.textDecoration = "line-through";
+        } else{
+            span.style.textDecoration = "none";
+        }
+        saveTasks();
+    };
+
+    let del = document.createElement("button");
+    del.textContent = "X";
+    del.onclick = function(){
+        li.remove();
+        saveTasks();
+    };
+
+    li.appendChild(chk);
+    li.appendChild(span);
+    li.appendChild(del);
+    list.appendChild(li);
+}
+
+function saveTasks(){
+    let tasks = [];
+    document.querySelectorAll("li").forEach(li=>{
+        let text = li.querySelector("span").textContent;
+        let done = li.querySelector("input").checked;
+        tasks.push({text:text, done:done});
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks(){
+    let stored = JSON.parse(localStorage.getItem("tasks") || "[]");
+    stored.forEach(t=>{
+        addTask(t.text);
+        let li = list.lastChild;
+        li.querySelector("input").checked = t.done;
+        if(t.done){
+            li.querySelector("span").style.textDecoration = "line-through";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
