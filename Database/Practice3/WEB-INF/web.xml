@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	
+	<servlet>
+		<servlet-name>signuppage</servlet-name>
+		<servlet-class>signuppage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>loginpage</servlet-name>
+		<servlet-class>loginpage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Dashboard</servlet-name>
+		<servlet-class>Dashboard</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminPanel</servlet-name>
+		<servlet-class>AdminPanel</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ErrorServlet</servlet-name>
+		<servlet-class>ErrorServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>signuppage</servlet-name>
+		<url-pattern>/signuppage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>loginpage</servlet-name>
+		<url-pattern>/loginpage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Dashboard</servlet-name>
+		<url-pattern>/Dashboard</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminPanel</servlet-name>
+		<url-pattern>/AdminPanel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ErrorServlet</servlet-name>
+		<url-pattern>/ErrorServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
